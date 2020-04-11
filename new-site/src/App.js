@@ -5,20 +5,16 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "flex-start" }}>
+
+        <img src={logo} alt="logo" style={{ width: '60px', marginTop: "20px", marginLeft: '30px' }} />
+      </div>
+      <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+        <div>
+          <h1>Designer, Front-end Developer & Mobile also</h1>
+        </div>
+      </div>
+
     </div>
   );
 }
