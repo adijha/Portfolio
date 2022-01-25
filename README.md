@@ -1,6 +1,10 @@
 ![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
 
-# Tailwind Nextjs Starter Blog
+# Adijha Blog
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8f975835-ad71-4513-87fd-af9b770b8994/deploy-status)](https://app.netlify.com/sites/agitated-wozniak-a52f56/deploys)
+
+[![GitHub stars](https://img.shields.io/github/stars/adijha/adijha-blog.svg?style=social)]
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/network/)
