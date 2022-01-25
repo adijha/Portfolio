@@ -10,7 +10,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
+  email: 'mail@adijha.com',
   github: 'https://github.com/adijha',
   twitter: 'https://twitter.com/adijha07',
   facebook: 'https://facebook.com/adijha07',
