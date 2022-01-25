@@ -1,6 +1,6 @@
-![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
+<!-- ![tailwind-nextjs-banner](/public/static/images/twitter-card.png) -->
 
-# Adijha Blog
+# Aditya Kumar Jha's Blog
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8f975835-ad71-4513-87fd-af9b770b8994/deploy-status)](https://app.netlify.com/sites/agitated-wozniak-a52f56/deploys)
 
