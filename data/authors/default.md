@@ -1,5 +1,5 @@
 ---
-name: Tails Azimuth
+name: Aditya Kumar Jha
 avatar: /static/images/avatar.png
 occupation: Professor of Atmospheric Science
 company: Stanford University
@@ -9,8 +9,11 @@ linkedin: https://www.linkedin.com
 github: https://github.com
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+Aditya Kumar Jha is a full stack web developer, UI/UX designer, software tester. He works with almost all popular javascript frameworks.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am a UI/UX designer and full stack JavaScript developer having experience in MERN Stack and
+React Native, I am currently focusing on building Rest APIs with GoLang. Mostly I use agile for my projects.
+I am
+doing some of my personal projects and also
+accepting some freelance work. I also
+participate in topcoder design challanges.
