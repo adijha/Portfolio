@@ -8,12 +8,12 @@ const projectsData = [
     href: 'https://nolink.ml',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    title: 'Refresher | a vs code extension',
+    description: `It's a simple extension that allows you to refresh the browser tab when you save any file in project directory
+    I used typescript here, and for refreshing browser I used chrome cli. We can install chrome cli by using brew install chrome-cli.
+    And for file change tracking I am using VS code's native api.`,
     imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    href: 'https://marketplace.visualstudio.com/items?itemName=adijha07.refresher',
   },
 ]
 
