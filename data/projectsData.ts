@@ -1,11 +1,11 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'A URL Shortner',
+    description: `I built this project to learn golang and postgres. It's a URL shortner that allows you to shorten your long URLs.
+    It uses a postgres database to store the user data and a redis cache to store the shortened URLs.
+    The frontend is built with html and vanilla javascript and the backend is built with Go.`,
+    imgSrc: '/static/images/time-machine.jpg',
+    href: 'https://nolink.ml',
   },
   {
     title: 'The Time Machine',
