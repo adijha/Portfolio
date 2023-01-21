@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'AdiJha Blog',
   author: 'Aditya Kumar Jha',
   headerTitle: 'AdiJha',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'Aditya documents his code journey',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://adijha.com',
