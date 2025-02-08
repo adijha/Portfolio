@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "gh-pages": "^2.1.1"
+  },
+  "name": "adijha.com",
+  "version": "1.0.0",
+  "main": "resume.js",
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adijha/adijha.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adijha/adijha.com/issues"
+  },
+  "homepage": "https://adijha.github.io/adijha.com",
+  "description": ""
+}
