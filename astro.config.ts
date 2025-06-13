@@ -1,7 +1,9 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  output: "static",
-  prefetch: true,
-  compressHTML: true,
-});
+	site: 'https://adijha.github.io',
+	base: '/Portfolio',
+	output: 'static',
+	prefetch: true,
+	compressHTML: true,
+})

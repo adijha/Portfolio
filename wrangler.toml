@@ -84,9 +84,3 @@ pages_build_output_dir = "./dist"
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "<PRODUCTION_NAMESPACE_ID>"
-
-[build]
-command = "npm run build"
-
-[build.environment_variables]
-NODE_VERSION = "18.20.8"
