@@ -17,7 +17,7 @@ const formatDate = (date: Date | undefined) => {
   if (!date) return "";
   return date.toLocaleDateString("en-US", {
     month: "short",
-    day: "numeric",
+    year: "numeric",
   });
 };
 
@@ -59,6 +59,29 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
         )
       }
     </section>
+
+    <Section>
+      <div class="section-header">
+        <h2>Work Experience</h2>
+      </div>
+      <ContentList>
+        {
+          sortedExperiences.map((exp) => (
+            <article class="experience-item">
+              <div class="title-row">
+                <div class="company-info">
+                  <span class="company-title">{exp.data.title}</span>
+                </div>
+                <time class="date-range">
+                  {formatDate(exp.data.startDate)} - {exp.data.current ? "Present" : formatDate(exp.data.endDate)}
+                </time>
+              </div>
+              <p class="muted-text company-description">{exp.data.description}</p>
+            </article>
+          ))
+        }
+      </ContentList>
+    </Section>
 
     <!-- <Section>
       <div class="section-header">
@@ -146,7 +169,7 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
   }
 
   .hero {
-    padding: 4rem 0;
+    padding: 2rem 0;
   }
 
   .introduction {
@@ -166,24 +189,62 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
     opacity: 0.7;
   }
 
+  .section-header h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .experience-item {
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .experience-item:last-child {
+    border-bottom: none;
+  }
+
   .title-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 1rem;
-    font-size: var(--text-sm);
+    margin-bottom: 0.5rem;
   }
 
   .company-info {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+  
+  }
+
+  .company-title {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--text-primary);
   }
 
   .company-logo {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;  
+    height: 1rem;
     object-fit: contain;
+  }
+
+  .date-range {
+    font-size: var(--text-xs);
+    opacity: 0.5;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .company-description {
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .muted-text {
+    opacity: 0.7;
   }
 
   time {
@@ -221,6 +282,16 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
 
     .container {
       padding: 0 1rem;
+    }
+
+    .title-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    .date-range {
+      align-self: flex-start;
     }
   }
 </style>

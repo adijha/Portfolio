@@ -2,7 +2,7 @@
   "home": {
     "name": "Aditya Kumar Jha",
     "title": "Software Engineer",
-    "introduction": "I’m constantly learning and evolving. I love diving into new ideas and finding creative ways to solve problems.",
+    "introduction": "Engineer, who isn't bound by a single technology, I build, UI, Backend, and everything in between.",
     "sections": {
       "blog": {
         "title": "Writing",
@@ -25,6 +25,14 @@
       {
         "platform": "Twitter",
         "url": "https://x.com/adijha07"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/adijha07/"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:mail@adijha.com"
       }
     ]
   }
