@@ -1,0 +1,345 @@
+---
+import Layout from "../components/layout/BaseLayout.astro";
+import { dailyConfig } from "../data/dailyConfig";
+
+// Pass config to client
+const configString = JSON.stringify(dailyConfig);
+---
+
+<Layout
+    title="Daily Dashboard"
+    description="Personal daily dashboard for gym, meals, and tasks."
+>
+    <main
+        class="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-purple-500 selection:text-white"
+    >
+        <!-- Login Overlay -->
+        <div
+            id="login-overlay"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0a] transition-opacity duration-500"
+        >
+            <div class="w-full max-w-md p-8 text-center">
+                <h1
+                    class="mb-8 text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+                >
+                    Welcome Back
+                </h1>
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Enter Passcode"
+                    class="w-full px-6 py-4 text-xl text-center bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all placeholder:text-white/20"
+                    autofocus
+                />
+                <p
+                    id="error-msg"
+                    class="mt-4 text-red-400 opacity-0 transition-opacity"
+                >
+                    Incorrect passcode
+                </p>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div
+            id="dashboard"
+            class="container mx-auto px-4 py-8 opacity-0 transition-opacity duration-1000 hidden"
+            style="display: none;"
+        >
+            <header
+                class="mb-12 flex flex-col md:flex-row justify-between items-end border-b border-white/10 pb-6"
+            >
+                <div>
+                    <h2
+                        class="text-sm font-medium text-purple-400 uppercase tracking-wider mb-2"
+                    >
+                        Daily Overview
+                    </h2>
+                    <h1
+                        id="current-date"
+                        class="text-4xl md:text-6xl font-bold text-white"
+                    >
+                    </h1>
+                </div>
+                <div class="mt-4 md:mt-0 text-right">
+                    <p
+                        id="current-day"
+                        class="text-2xl text-white/60 font-light"
+                    >
+                    </p>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Meals Section -->
+                <section
+                    class="col-span-1 md:col-span-2 lg:col-span-1 bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-green-500/20 text-green-400 group-hover:bg-green-500/30 transition-colors"
+                            >🥗</span
+                        >
+                        Meals
+                    </h3>
+                    <div class="space-y-6">
+                        {
+                            dailyConfig.meals.map((meal) => (
+                                <div class="p-4 rounded-2xl bg-black/20 border border-white/5">
+                                    <h4 class="text-lg font-semibold text-green-400 mb-2">
+                                        {meal.name}
+                                    </h4>
+                                    <ul class="space-y-1">
+                                        {meal.items.map((item) => (
+                                            <li class="text-white/80 text-sm flex items-start gap-2">
+                                                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/20" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                        <div
+                            class="p-4 rounded-2xl bg-black/20 border border-white/5"
+                        >
+                            <h4
+                                class="text-lg font-semibold text-blue-400 mb-2"
+                            >
+                                Supplements
+                            </h4>
+                            <ul class="space-y-1">
+                                {
+                                    dailyConfig.supplements.map((item) => (
+                                        <li class="text-white/80 text-sm flex items-start gap-2">
+                                            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400/50" />
+                                            {item}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Gym Section -->
+                <section
+                    class="col-span-1 md:col-span-2 lg:col-span-1 bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors"
+                            >💪</span
+                        >
+                        Gym
+                    </h3>
+                    <div id="gym-content" class="space-y-4">
+                        <!-- Populated by JS -->
+                    </div>
+                </section>
+
+                <!-- 3. Leetcode Section -->
+                <section
+                    class="bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-yellow-500/20 text-yellow-400 group-hover:bg-yellow-500/30 transition-colors"
+                            >💻</span
+                        >
+                        Leetcode
+                    </h3>
+                    <div
+                        id="leetcode-content"
+                        class="p-6 rounded-2xl bg-black/20 border border-white/5 text-center"
+                    >
+                        <!-- Populated by JS -->
+                    </div>
+                </section>
+
+                <!-- 4. System Design -->
+                <section
+                    class="bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-blue-500/20 text-blue-400 group-hover:bg-blue-500/30 transition-colors"
+                            >🏗️</span
+                        >
+                        System Design
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            dailyConfig.systemDesign.tasks.map((task) => (
+                                <li class="flex items-center gap-3 p-3 rounded-xl bg-black/20 border border-white/5">
+                                    <input
+                                        type="checkbox"
+                                        class="w-5 h-5 rounded border-white/20 bg-white/5 text-blue-500 focus:ring-blue-500/40 focus:ring-offset-0"
+                                    />
+                                    <span class="text-white/80">{task}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                <!-- 5. Hotstar -->
+                <section
+                    class="bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500/30 transition-colors"
+                            >🍿</span
+                        >
+                        Hotstar
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            dailyConfig.hotstar.tasks.map((task) => (
+                                <li class="flex items-center gap-3 p-3 rounded-xl bg-black/20 border border-white/5">
+                                    <input
+                                        type="checkbox"
+                                        class="w-5 h-5 rounded border-white/20 bg-white/5 text-indigo-500 focus:ring-indigo-500/40 focus:ring-offset-0"
+                                    />
+                                    <span class="text-white/80">{task}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                <!-- 6. Magic -->
+                <section
+                    class="bg-white/5 rounded-3xl p-6 border border-white/10 hover:border-purple-500/30 transition-colors group"
+                >
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="p-2 rounded-lg bg-pink-500/20 text-pink-400 group-hover:bg-pink-500/30 transition-colors"
+                            >✨</span
+                        >
+                        Magic
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            dailyConfig.magic.tasks.map((task) => (
+                                <li class="flex items-center gap-3 p-3 rounded-xl bg-black/20 border border-white/5">
+                                    <input
+                                        type="checkbox"
+                                        class="w-5 h-5 rounded border-white/20 bg-white/5 text-pink-500 focus:ring-pink-500/40 focus:ring-offset-0"
+                                    />
+                                    <span class="text-white/80">{task}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<script define:vars={{ configString }}>
+    const config = JSON.parse(configString);
+    const PASSCODE = "6565";
+
+    // DOM Elements
+    const loginOverlay = document.getElementById("login-overlay");
+    const passwordInput = document.getElementById("password-input");
+    const errorMsg = document.getElementById("error-msg");
+    const dashboard = document.getElementById("dashboard");
+    const currentDateEl = document.getElementById("current-date");
+    const currentDayEl = document.getElementById("current-day");
+    const gymContent = document.getElementById("gym-content");
+    const leetcodeContent = document.getElementById("leetcode-content");
+
+    // Date Logic
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    const now = new Date();
+    const dayName = days[now.getDay()];
+    const dateString = now.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    });
+
+    currentDateEl.textContent = dateString;
+    currentDayEl.textContent = dayName;
+
+    // Populate Gym
+    const todaysWorkout = config.gym[dayName];
+    if (todaysWorkout) {
+        let html = `<div class="p-4 rounded-2xl bg-red-500/10 border border-red-500/20 mb-4">
+      <h4 class="text-xl font-bold text-red-400">${todaysWorkout.focus}</h4>
+    </div>`;
+
+        html += `<ul class="space-y-3">`;
+        todaysWorkout.exercises.forEach((ex) => {
+            html += `<li class="flex items-start gap-3 text-white/80 text-sm">
+        <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-red-400/50 flex-shrink-0"></span>
+        <span>${ex}</span>
+      </li>`;
+        });
+        html += `</ul>`;
+        gymContent.innerHTML = html;
+    } else {
+        gymContent.innerHTML = `<p class="text-white/60 italic">Rest Day</p>`;
+    }
+
+    // Populate Leetcode
+    if (dayName === "Sunday") {
+        leetcodeContent.innerHTML = `
+      <div class="text-6xl mb-4">🏆</div>
+      <h4 class="text-xl font-bold text-yellow-400 mb-2">Contest Day!</h4>
+      <p class="text-white/60">Go crush it.</p>
+    `;
+    } else {
+        leetcodeContent.innerHTML = `
+      <div class="text-6xl mb-4">📝</div>
+      <h4 class="text-xl font-bold text-yellow-400 mb-2">Daily Practice</h4>
+      <p class="text-white/60">Consistency is key.</p>
+    `;
+    }
+
+    // Check for saved auth
+    const savedAuth = localStorage.getItem("daily_auth");
+    if (savedAuth === "true") {
+        loginOverlay.style.display = "none";
+        dashboard.classList.remove("hidden");
+        dashboard.style.display = "block";
+        dashboard.style.opacity = "1";
+    } else {
+        // Ensure login is visible if not authenticated
+        loginOverlay.style.display = "flex";
+    }
+
+    // Login Logic
+    passwordInput.addEventListener("keyup", (e) => {
+        if (e.target.value === PASSCODE) {
+            localStorage.setItem("daily_auth", "true");
+            loginOverlay.style.opacity = "0";
+            setTimeout(() => {
+                loginOverlay.style.display = "none";
+                dashboard.classList.remove("hidden");
+                dashboard.style.display = "block";
+                // Trigger reflow
+                void dashboard.offsetWidth;
+                dashboard.style.opacity = "1";
+            }, 500);
+        } else if (e.target.value.length >= 4) {
+            errorMsg.style.opacity = "1";
+            setTimeout(() => {
+                errorMsg.style.opacity = "0";
+                e.target.value = "";
+            }, 1000);
+        }
+    });
+</script>
