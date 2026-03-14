@@ -21,24 +21,29 @@ const formatDate = (date: Date | undefined) => {
   });
 };
 
-const posts = await getCollection("blog", ({ data }: CollectionEntry<"blog">) => {
-  return import.meta.env.PROD ? !data.draft : true;
-});
+const posts = await getCollection(
+  "blog",
+  ({ data }: CollectionEntry<"blog">) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  },
+);
 const latestPosts = posts
   .sort(
     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-      b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+      b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
   )
   .slice(0, 3);
 
 const experiences = await getCollection("experience");
 const sortedExperiences = experiences.sort(
   (a: CollectionEntry<"experience">, b: CollectionEntry<"experience">) =>
-    b.data.startDate.getTime() - a.data.startDate.getTime()
+    b.data.startDate.getTime() - a.data.startDate.getTime(),
 );
 
 const projects = await getCollection("projects");
-const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
+const featuredProjects = projects
+  .filter((project: CollectionEntry<"projects">) => project.data.featured)
+  .slice(0, 3);
 ---
 
 <BaseLayout title={`${site.name} - Portfolio`} description={site.introduction}>
@@ -60,6 +65,32 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
       }
     </section>
 
+    <section class="startup-section">
+      <div class="startup-header">
+        <h2 class="startup-title">My Startup</h2>
+      </div>
+      <div class="startup-card">
+        <div class="startup-card-content">
+          <div class="startup-header-row">
+            <h3 class="startup-name">MagicSell.ai</h3>
+            <a href="https://magicsell.ai" target="_blank" class="startup-link"
+              >Visit Site ↗</a
+            >
+          </div>
+          <p class="startup-subtitle">
+            AI-powered upselling & cross-selling for Shopify
+          </p>
+          <p class="startup-desc">
+            An intelligent Shopify application that helps e-commerce brands
+            unlock up to 35% more revenue. MagicSell analyzes customer behavior
+            in real-time to offer smart product combos, automated gift rewards,
+            and last-minute suggestions right before checkout. Features a
+            seamless, no-code customizable cart drawer.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <Section>
       <div class="section-header">
         <h2>Work Experience</h2>
@@ -73,17 +104,20 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
                   <span class="company-title">{exp.data.title}</span>
                 </div>
                 <time class="date-range">
-                  {formatDate(exp.data.startDate)} - {exp.data.current ? "Present" : formatDate(exp.data.endDate)}
+                  {formatDate(exp.data.startDate)} -{" "}
+                  {exp.data.current ? "Present" : formatDate(exp.data.endDate)}
                 </time>
               </div>
-              <p class="muted-text company-description">{exp.data.description}</p>
+              <p class="muted-text company-description">
+                {exp.data.description}
+              </p>
             </article>
           ))
         }
       </ContentList>
     </Section>
 
-    <!-- <Section>
+    <!-- <section class="section">
       <div class="section-header">
         <h2>{site.sections.blog.title}</h2>
         <a href="/blog">{site.sections.blog.viewAllText}</a>
@@ -95,7 +129,9 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
               <div class="title-row">
                 <a href={`/blog/${post.id}`}>{post.data.title}</a>
                 {post.data.publishedAt && (
-                  <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
+                  <time datetime={post.data.publishedAt.toISOString()}>
+                    {formatDate(post.data.publishedAt)}
+                  </time>
                 )}
               </div>
               <p class="muted-text">{post.data.description}</p>
@@ -103,7 +139,7 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
           ))
         }
       </ContentList>
-    </Section> -->
+    </section> -->
 
     <!-- <section class="section">
       <div class="section-header">
@@ -115,7 +151,11 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
           featuredProjects.map((project) => (
             <article>
               <div class="title-row">
-                <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {project.data.title}
                 </a>
               </div>
@@ -215,7 +255,6 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
   .company-info {
     display: flex;
     align-items: center;
-  
   }
 
   .company-title {
@@ -225,7 +264,7 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
   }
 
   .company-logo {
-    width: 1rem;  
+    width: 1rem;
     height: 1rem;
     object-fit: contain;
   }
@@ -293,5 +332,75 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
     .date-range {
       align-self: flex-start;
     }
+
+    .startup-header-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  /* Startup Section Styles */
+  .startup-section {
+    margin: 4rem 0;
+  }
+  .startup-header {
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .startup-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  .startup-card {
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+  .startup-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .startup-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .startup-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  .startup-link {
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    opacity: 0.5;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .startup-link:hover {
+    opacity: 1;
+  }
+  .startup-subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin: 0 0 0.5rem 0;
+  }
+  .startup-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    opacity: 0.6;
+    margin: 0;
   }
 </style>
