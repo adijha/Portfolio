@@ -1,151 +1,136 @@
 ---
-title: "Async Generators in JavaScript: Taming the Data Flood"
-description: "A deep dive into using async generators for handling large data streams efficiently"
+title: "Async Generators in Node.js: Streaming High-Volume Datasets without Memory Bloat"
+description: "How to process thousands of database records, sitemaps, and product feeds using async generators to control heap memory."
 publishedAt: 2024-09-15
-tags: ["javascript", "async", "generators", "streams", "performance"]
 ---
 
-## The Data Deluge
+As applications scale, memory leaks and heap crashes become a constant battle. In my time working on video SEO at JioHotstar, we indexed over 300,000 videos on Google. When you're pulling that much database content, transforming it, and building XML sitemaps, loading everything into memory is a recipe for a Node.js heap out-of-memory error.
 
-In the world of modern web development, we often find ourselves dealing with large amounts of data. Whether it's streaming API responses, processing large files, or handling real-time updates, managing data flow efficiently is crucial. Enter async generators - a powerful feature that combines the best of async programming and iterative processing.
+Similarly, in e-commerce apps like MagicSell.ai or the Shopify tools I built at Mojito Labs, sync operations have to fetch thousands of products from Shopify APIs, parse their options, and update database stores. 
 
-## Understanding Async Generators
+If you load 50,000 product objects into an array, process them, and then save them, your memory usage spikes, leading to garbage collection lag or service crashes.
 
-At their core, async generators are a fusion of two powerful JavaScript features: async/await and generator functions. They allow you to create functions that can pause execution, yield values asynchronously, and resume when needed.
+The solution is to stream the data. And the most elegant way to handle asynchronous streams in JavaScript is using **Async Generators**.
 
-```javascript
-async function* numberStream() {
-  for (let i = 0; i < 1000; i++) {
-    // Simulate async operation
-    await new Promise(resolve => setTimeout(resolve, 100));
-    yield i;
-  }
-}
+---
 
-// Using the generator
-const stream = numberStream();
-for await (const number of stream) {
-  console.log(number);
-}
-```
+### What are Async Generators?
 
-## Real-World Applications
+Async generators combine generator functions (which can pause and resume execution) with promises (async/await). They allow you to yield values asynchronously, creating an on-demand pull-based stream.
 
-Let's look at some practical examples where async generators shine:
-
-### 1. Paginated API Calls
+Instead of returning a massive array, you yield items one by one (or in small chunks). The consuming code fetches the next item only when it is ready to process it.
 
 ```javascript
-async function* fetchAllUsers() {
-  let page = 1;
-  while (true) {
-    const response = await fetch(`/api/users?page=${page}`);
-    const data = await response.json();
-    
-    if (data.users.length === 0) break;
-    
-    yield* data.users;
-    page++;
-  }
-}
+async function* getProductStream(shopifyClient) {
+  let cursor = null;
+  let hasNextPage = true;
 
-// Process users one at a time
-for await (const user of fetchAllUsers()) {
-  await processUser(user);
-}
-```
+  while (hasNextPage) {
+    const { products, pageInfo } = await shopifyClient.fetchProductsPage({
+      limit: 50,
+      after: cursor
+    });
 
-### 2. Large File Processing
-
-```javascript
-async function* readFileByChunks(file) {
-  const chunkSize = 64 * 1024; // 64KB chunks
-  const reader = file.stream().getReader();
-  
-  while (true) {
-    const {done, value} = await reader.read();
-    if (done) break;
-    yield value;
-  }
-}
-
-// Process file chunks
-const file = await fetch('large-file.txt').then(r => r.blob());
-for await (const chunk of readFileByChunks(file)) {
-  await processChunk(chunk);
-}
-```
-
-### 3. Real-time Data Handling
-
-```javascript
-async function* webSocketStream(url) {
-  const ws = new WebSocket(url);
-  
-  try {
-    while (true) {
-      const message = await new Promise((resolve, reject) => {
-        ws.onmessage = e => resolve(e.data);
-        ws.onerror = e => reject(e);
-      });
-      yield JSON.parse(message);
+    for (const product of products) {
+      yield product; // Yield one product at a time
     }
-  } finally {
-    ws.close();
-  }
-}
 
-// Handle real-time updates
-const stream = webSocketStream('wss://api.example.com/live');
-for await (const update of stream) {
-  await handleUpdate(update);
-}
-```
-
-## Best Practices and Patterns
-
-When working with async generators, keep these principles in mind:
-
-1. **Memory Management**: Yield values as soon as they're available to prevent memory buildup
-2. **Error Handling**: Use try/catch blocks effectively within generator functions
-3. **Resource Cleanup**: Implement proper cleanup in finally blocks
-4. **Backpressure**: Consider implementing backpressure mechanisms for data streams
-
-```javascript
-async function* withBackpressure(source, processFunc) {
-  for await (const item of source) {
-    await processFunc(item); // Natural backpressure
-    yield item;
+    cursor = pageInfo.nextCursor;
+    hasNextPage = pageInfo.hasNextPage;
   }
 }
 ```
 
-## Performance Considerations
+To consume this stream, JavaScript provides the `for await...of` loop:
 
-Async generators are powerful, but they come with some overhead. Here are some tips for optimal performance:
-
-1. **Batch Processing**: Sometimes yielding in batches is more efficient
 ```javascript
-async function* batchProcessor(source, batchSize = 100) {
+const productStream = getProductStream(client);
+
+for await (const product of productStream) {
+  await processAndSaveProduct(product); 
+  // Node.js only holds the current product in memory, keeping heap size completely flat.
+}
+```
+
+---
+
+### Practical Use Cases
+
+#### 1. Generating a 300k+ Video XML Sitemap
+To build a sitemap for hundreds of thousands of videos, we can stream database rows from PostgreSQL, format them into XML nodes, and write them directly to a writable file stream.
+
+```javascript
+import { createWriteStream } from 'fs';
+import { db } from './db-connection';
+
+async function* streamSitemapUrls() {
+  const pageSize = 1000;
+  let offset = 0;
+
+  while (true) {
+    const videos = await db.select('id', 'title', 'loc_url')
+      .from('videos')
+      .limit(pageSize)
+      .offset(offset);
+
+    if (videos.length === 0) break;
+
+    for (const video of videos) {
+      yield `  <url><loc>${video.loc_url}</loc><video:title>${video.title}</video:title></url>\n`;
+    }
+
+    offset += pageSize;
+  }
+}
+
+async function writeSitemap() {
+  const writer = createWriteStream('sitemap-videos.xml');
+  writer.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n');
+
+  for await (const xmlChunk of streamSitemapUrls()) {
+    // If write buffer is full, wait for 'drain' event to handle backpressure
+    if (!writer.write(xmlChunk)) {
+      await new Promise(resolve => writer.once('drain', resolve));
+    }
+  }
+
+  writer.write('</urlset>');
+  writer.end();
+}
+```
+
+#### 2. Batching Database Upserts to Prevent Query Bottlenecks
+While processing one-by-one is great for memory, database writes are more efficient in batches. We can write a generator that consumes a single-item stream and groups them into batches:
+
+```javascript
+async function* batchStream(sourceStream, batchSize = 100) {
   let batch = [];
-  for await (const item of source) {
+  
+  for await (const item of sourceStream) {
     batch.push(item);
     if (batch.length >= batchSize) {
       yield batch;
       batch = [];
     }
   }
-  if (batch.length > 0) yield batch;
+  
+  if (batch.length > 0) {
+    yield batch;
+  }
+}
+
+// Consuming Shopify products and upserting in batches of 100
+const productsPageStream = batchStream(getProductStream(client), 100);
+
+for await (const productBatch of productsPageStream) {
+  await db('products').insert(productBatch).onConflict('id').merge();
 }
 ```
 
-2. **Caching**: Cache results when appropriate
-3. **Early Termination**: Implement break conditions to stop processing when needed
+---
 
-## The Future of Data Processing
+### Key Takeaways
 
-Async generators represent a paradigm shift in how we handle data streams in JavaScript. They provide a clean, efficient way to process large amounts of data while maintaining control over memory usage and processing speed.
-
-As we move towards more data-intensive applications, understanding and effectively using async generators becomes increasingly important. They're not just a feature - they're a fundamental tool in the modern developer's arsenal.
-
-Remember: The key to handling large data streams isn't just about processing everything at once, but about maintaining a steady, controlled flow of data. Async generators give us exactly that - a way to tame the data flood, one yield at a time. 
+1. **Backpressure management**: By using `for await...of`, the consumer controls the speed of the producer. If a database insert takes 50ms, the next batch isn’t fetched from the API until the current insert completes.
+2. **Garbage Collection Optimization**: Because objects are discarded as soon as they are processed in the loop, Node.js doesn't need to trigger heavy, blocking garbage collection cycles.
+3. **Error Handling**: Use standard `try/catch` inside the generator. If the consumer breaks or throws, the generator's `finally` block is executed, allowing database connections or file handles to close gracefully.
