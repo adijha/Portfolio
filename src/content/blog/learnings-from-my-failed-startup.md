@@ -53,9 +53,6 @@ Don't hire before you have paying customers. Don't pick a co-founder out of anxi
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

@@ -61,9 +61,6 @@ Your personal website is your SEO anchor. Link everything to it. Publish consist
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

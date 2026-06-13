@@ -67,9 +67,6 @@ For working engineers building products, LLM APIs are where to start. Fine-tunin
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

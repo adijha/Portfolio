@@ -64,9 +64,6 @@ Cloudflare for domain, Resend for email, Plausible for analytics, Astro for blog
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

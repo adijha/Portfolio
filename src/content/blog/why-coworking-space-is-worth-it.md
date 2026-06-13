@@ -1,6 +1,6 @@
 ---
 title: "Why a costly co-working space membership is worth it"
-description: "Working from home kills focus for most people. Here's the cost-output case for a co-working membership and what to look for, with my Bangalore setup."
+description: "Working from home kills focus for most people. Here's the cost-output case for a co-working membership and what to look for."
 publishedAt: 2026-06-13
 draft: false
 ---
@@ -31,7 +31,7 @@ I noticed this after a few weeks of full WFH during MagicSell. My output dropped
 
 ## The cost vs output math
 
-A WeWork or Awfis membership in Bangalore runs ₹8,000–15,000/month depending on the space and plan.
+Co-working memberships vary a lot by city — anywhere from $100 to $500/month for a flexible desk. The math is the same regardless of price.
 
 If the co-working environment gives you 2 extra productive hours per day compared to working from home — that's 40–50 hours per month. At an engineer's rate, those hours are worth significantly more than the membership fee.
 
@@ -51,7 +51,7 @@ Things I don't care about: ping pong tables, exposed brick walls, "community eve
 
 Find somewhere close enough that you'll actually go. A great co-working space 45 minutes away loses to a decent one 10 minutes away.
 
-## My setup in Bangalore
+## My setup
 
 I use a flexible desk plan. I don't book the same desk every day — I find the quietest corner and set up there. I go 4–5 days a week.
 
@@ -65,9 +65,6 @@ Working from home is a trap for most people building something. A good co-workin
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

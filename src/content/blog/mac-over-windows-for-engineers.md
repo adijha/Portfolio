@@ -1,6 +1,6 @@
 ---
-title: "Why choose Mac over Windows — even taking a loan is worth it"
-description: "Not just vibes — an ROI breakdown of Mac vs Windows for developers: terminal access, build times, battery, resale value, and the EMI math."
+title: "Why choose Mac over Windows — even financing it is worth it"
+description: "Not just vibes — an ROI breakdown of Mac vs Windows for developers: terminal access, build times, battery, resale value, and the real cost math."
 publishedAt: 2026-06-13
 draft: false
 ---
@@ -35,15 +35,15 @@ Most dev tooling is built by engineers who use Macs. It shows.
 
 ## Resale value: the real math
 
-A MacBook Pro M3 costs ₹1.8 lakh today. In 3 years, it sells for ₹80,000–1,00,000 on resale. You're paying ₹80,000 for 3 years of a top-tier dev machine — about ₹2,200/month.
+A MacBook Pro M3 holds its value unusually well. In 3 years, it resells for 50–60% of the original price. A comparably performing Windows laptop depreciates faster and sells for almost nothing in 3 years. The effective cost gap over 3 years is smaller than the sticker price implies.
 
-A comparably performing Windows laptop costs less upfront but depreciates faster and sells for almost nothing in 3 years. The effective cost gap over 3 years is smaller than the sticker price implies.
+Run the math: (purchase price - resale value) / 36 months = your actual monthly cost for the machine.
 
-## The EMI math vs lost productivity
+## The financing math vs lost productivity
 
-If you're an engineer earning ₹80,000–2,00,000/month, the productivity difference between a Mac and a budget Windows laptop likely costs you more in time per month than the EMI on a MacBook.
+If you're an engineer earning a decent rate, the productivity difference between a Mac and a budget Windows laptop likely costs you more in lost time per month than the monthly payment on a MacBook.
 
-I'm not saying borrow money for gadgets. I'm saying: if the choice is between a year of fighting with Windows tooling versus a 12-month EMI on a Mac — run the numbers honestly.
+I'm not saying borrow money for gadgets. I'm saying: if the choice is between a year of fighting with Windows tooling versus a 12-month payment plan on a Mac — run the numbers honestly.
 
 ---
 
@@ -53,9 +53,6 @@ The Mac advantage for engineers is real and measurable: Unix terminal, battery l
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

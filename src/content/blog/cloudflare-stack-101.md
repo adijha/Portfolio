@@ -59,9 +59,6 @@ Cloudflare's developer platform is underrated. Pages + Workers + R2 alone covers
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

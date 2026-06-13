@@ -62,9 +62,6 @@ Start with a custom app to learn the Shopify API. Build embedded with Polaris. H
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

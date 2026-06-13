@@ -59,9 +59,6 @@ Weighted calisthenics is underrated for joint health, athletic carryover, and lo
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

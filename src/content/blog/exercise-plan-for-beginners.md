@@ -75,9 +75,6 @@ Three days a week, full body, simple compound movements. Add weight gradually. T
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

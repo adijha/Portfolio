@@ -59,9 +59,6 @@ Don't pick a co-founder out of convenience or anxiety. If it's not working, have
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

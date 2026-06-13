@@ -61,9 +61,6 @@ Being full-stack is a superpower when you want to build a product, join an early
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

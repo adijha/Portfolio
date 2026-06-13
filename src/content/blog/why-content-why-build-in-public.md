@@ -65,9 +65,6 @@ Content is a distribution strategy, not a vanity metric. Start before you're rea
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

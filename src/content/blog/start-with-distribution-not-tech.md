@@ -70,9 +70,6 @@ Distribution is not a post-launch problem. It's a pre-launch strategy. Start bui
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

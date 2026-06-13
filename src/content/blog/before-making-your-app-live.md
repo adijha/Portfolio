@@ -61,9 +61,6 @@ Security, monitoring, backups, and legal are the non-negotiables. Do them before
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

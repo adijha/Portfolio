@@ -1,6 +1,6 @@
 ---
 title: "Everything about fiber"
-description: "What fiber actually does, how much you need, and the best sources — with Indian food specifically. The most underrated thing in fitness and nutrition."
+description: "What fiber actually does, how much you need, and the best sources. The most underrated thing in fitness and nutrition."
 publishedAt: 2026-06-13
 draft: false
 ---
@@ -17,7 +17,7 @@ It slows down digestion — which means you feel full longer and blood sugar ris
 
 The less obvious benefit: adequate fiber intake is linked to lower risk of heart disease, type 2 diabetes, and several cancers. This is one of the most consistent findings in nutrition research over decades.
 
-Most people are chronically under-eating fiber. The target is 25–35g per day. Most Indians get 10–15g.
+Most people are chronically under-eating fiber. The target is 25–35g per day. Most people get 10–15g.
 
 ## Soluble vs insoluble — the simple version
 
@@ -35,15 +35,13 @@ To put it in scale: one medium apple is about 4g. A bowl of oats is 4g. A cup of
 
 If you've been eating low fiber and suddenly increase to 35g, start slowly. Your gut bacteria need time to adjust. Increase over 2–3 weeks to avoid bloating and discomfort.
 
-## Best sources — Indian food options specifically
+## Best sources
 
-**Dal** — lentils are one of the best fiber sources available. A cup of cooked masoor, moong, or chana dal gives you 7–10g.
+**Lentils and legumes** — one of the best fiber sources available. A cup of cooked lentils or beans gives you 7–10g.
 
-**Rajma and chole** — legumes are fiber-dense. Rajma chawal is actually a high-fiber meal.
+**Vegetables** — especially broccoli, cauliflower, spinach, and Brussels sprouts. The problem is usually portion size, not variety.
 
-**Vegetables** — sabzi, especially cauliflower, broccoli, spinach, and bhindi. Most Indians eat enough vegetables; the problem is portion size.
-
-**Roti over maida** — whole wheat roti gives you fiber. Maida (refined flour) gives you almost none.
+**Whole grains over refined** — whole wheat bread or oats gives you fiber. White flour gives you almost none.
 
 **Oats** — easy breakfast addition. Mix with banana and you have 7–8g before the day starts.
 
@@ -53,7 +51,7 @@ If you've been eating low fiber and suddenly increase to 35g, start slowly. Your
 
 Morning: oats + banana + some nuts — around 8–10g
 
-Lunch: dal + roti + sabzi — around 10–12g
+Lunch: lentils + vegetables + whole grain — around 10–12g
 
 Snack: fruit or raw vegetables — 3–5g
 
@@ -65,13 +63,10 @@ Total: 26–33g on a normal day without thinking too hard about it.
 
 **The takeaway**
 
-Fiber is free nutrition insurance. Most people in India have the right ingredients — dal, sabzi, roti — but don't eat enough of them. Hit 25–35g daily and your digestion, energy, and long-term health will reflect it.
+Fiber is free nutrition insurance. Hit 25–35g daily and your digestion, energy, and long-term health will reflect it.
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

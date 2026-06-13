@@ -1,6 +1,6 @@
 ---
 title: "Why and how to manage diet"
-description: "No meal plans. Just 4 rules — protein, calories, eating out in India — with what I actually eat as a busy engineer training for Hyrox."
+description: "No meal plans. Just 4 rules — protein, calories, eating out — with what I actually eat as a busy engineer training for Hyrox."
 publishedAt: 2026-06-13
 draft: false
 ---
@@ -17,7 +17,7 @@ Protein builds and maintains muscle. It's more satiating than carbs or fat — m
 
 Target: 1.6 to 2.2 grams of protein per kilogram of bodyweight per day. If you weigh 75kg, aim for 120–165g of protein daily.
 
-Most people in India eat 50–60g a day. That's why most people don't see results even when they train consistently.
+Most people eat 50–60g a day. That's why most people don't see results even when they train consistently.
 
 ## Calories in/out — without obsessing
 
@@ -27,17 +27,17 @@ If you're trying to lose fat: eat at a slight caloric deficit (eat a bit less th
 
 The simplest framework I use: fill half my plate with protein, a quarter with vegetables, a quarter with carbs. No tracking apps, no meal prep containers. Just a consistent mental model.
 
-## What I eat on a real busy workday in India
+## What I eat on a real busy workday
 
 Breakfast: eggs (4 whole eggs or a mix of whole eggs and whites) + fruit or oats
 
-Lunch: dal + rice or chapati + a vegetable + curd (standard Indian meal, actually solid nutrition)
+Lunch: some protein (lentils, chicken, or fish) + vegetables + a carb (rice, bread, or similar)
 
-Snack: paneer, Greek yogurt, or a protein shake if I'm in a hurry
+Snack: Greek yogurt, cottage cheese, or a protein shake if I'm in a hurry
 
-Dinner: lean protein (chicken, fish, tofu) + vegetables + a small amount of rice or roti
+Dinner: lean protein (chicken, fish, tofu) + vegetables + a small amount of carbs
 
-This is not exotic. It's normal Indian food, structured around protein.
+Structure every meal around protein first. Everything else fills in around it.
 
 ## Supplements worth taking
 
@@ -45,15 +45,15 @@ This is not exotic. It's normal Indian food, structured around protein.
 
 **Creatine monohydrate** — 5g daily, no cycling needed. One of the most researched supplements in existence. Measurably improves strength and muscle output. Cheap.
 
-**Vitamin D3** — most people in India are deficient despite sunlight. Affects mood, energy, testosterone.
+**Vitamin D3** — most people are deficient regardless of how much time they spend outside. Affects mood, energy, testosterone.
 
 That's the list. Everything else (pre-workout, BCAA, fat burners) is optional or useless.
 
-## Eating out in India and staying on track
+## Eating out and staying on track
 
 Eat out freely. Don't use eating out as an excuse to abandon your protein target.
 
-At a restaurant: order a protein-heavy dish first (paneer, eggs, chicken). Skip the bread basket. Have dessert occasionally, not every time.
+At a restaurant: order a protein-heavy dish first (eggs, chicken, fish, legumes). Skip the bread basket. Have dessert occasionally, not every time.
 
 If you're at a social meal and can't control what's served, eat a protein-heavy snack before you go.
 
@@ -61,13 +61,10 @@ If you're at a social meal and can't control what's served, eat a protein-heavy 
 
 **The takeaway**
 
-Hit your protein target every day. Keep calories roughly in the right range. Don't obsess over the rest. Indian food is actually well-suited to high-protein eating — dal, eggs, paneer, curd. You don't need a Western meal plan.
+Hit your protein target every day. Keep calories roughly in the right range. Don't obsess over the rest. You don't need a special meal plan — just structure what you already eat around protein.
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

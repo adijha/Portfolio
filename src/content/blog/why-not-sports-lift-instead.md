@@ -68,9 +68,6 @@ Strength training is the foundation. It's consistent, low-injury, and gives you 
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

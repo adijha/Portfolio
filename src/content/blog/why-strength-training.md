@@ -61,9 +61,6 @@ Strength training is the highest-ROI physical activity. It builds muscle, improv
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

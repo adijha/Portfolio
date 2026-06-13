@@ -55,9 +55,6 @@ Zero to One is worth one read. Don't treat it as gospel — Thiel is deliberatel
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

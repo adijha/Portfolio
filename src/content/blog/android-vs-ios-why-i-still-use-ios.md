@@ -33,7 +33,7 @@ If you're not in the Apple ecosystem, Android is technically the better platform
 
 iMessage. Not a joke.
 
-In India and Nepal, this matters less than in the US. But if you're communicating with people who use Apple devices — photos, voice notes, reactions — moving to Android creates friction that's easy to underestimate.
+In many markets outside the US, iMessage is less dominant. But if you're communicating with people who use Apple devices — photos, voice notes, reactions — moving to Android creates friction that's easy to underestimate.
 
 The other cost: muscle memory. I've used iOS since my first smartphone. I'm fast on it. Switching platforms has a real productivity cost in the first few months.
 
@@ -61,9 +61,6 @@ Android is technically superior in many ways. iOS wins on developer ecosystem, u
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

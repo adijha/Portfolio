@@ -67,9 +67,6 @@ Measure p99, not averages. Fix N+1 queries first — they're almost always there
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 

@@ -69,9 +69,6 @@ Don't ask "would you use this?" Ask people to take an action. Fake door test, la
 
 ---
 
-**Watch the full breakdown →**
-
-I covered this in detail on Instagram. Watch here: [video link]
 
 ---
 
