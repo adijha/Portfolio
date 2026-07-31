@@ -56,4 +56,4 @@ Don't hire before you have paying customers. Don't pick a co-founder out of anxi
 
 ---
 
-*Building something? Follow me on [Instagram](https://instagram.com/adijha07) and [Twitter](https://x.com/adijha07) — I document everything.*
+*Building something? Follow me on [Instagram](https://instagram.com/adityajha_builds) and [Twitter](https://x.com/adijha07) — I document everything.*

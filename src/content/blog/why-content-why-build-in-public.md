@@ -68,4 +68,4 @@ Content is a distribution strategy, not a vanity metric. Start before you're rea
 
 ---
 
-*Building something? Follow me on [Instagram](https://instagram.com/adijha07) and [Twitter](https://x.com/adijha07) — I document everything.*
+*Building something? Follow me on [Instagram](https://instagram.com/adityajha_builds) and [Twitter](https://x.com/adijha07) — I document everything.*

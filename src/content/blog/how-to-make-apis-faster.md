@@ -70,4 +70,4 @@ Measure p99, not averages. Fix N+1 queries first — they're almost always there
 
 ---
 
-*Building something? Follow me on [Instagram](https://instagram.com/adijha07) and [Twitter](https://x.com/adijha07) — I document everything.*
+*Building something? Follow me on [Instagram](https://instagram.com/adityajha_builds) and [Twitter](https://x.com/adijha07) — I document everything.*

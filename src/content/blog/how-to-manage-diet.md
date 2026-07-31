@@ -68,4 +68,4 @@ Hit your protein target every day. Keep calories roughly in the right range. Don
 
 ---
 
-*Building something? Follow me on [Instagram](https://instagram.com/adijha07) and [Twitter](https://x.com/adijha07) — I document everything.*
+*Building something? Follow me on [Instagram](https://instagram.com/adityajha_builds) and [Twitter](https://x.com/adijha07) — I document everything.*
