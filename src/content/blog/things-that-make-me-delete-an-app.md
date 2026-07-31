@@ -7,8 +7,6 @@ draft: false
 
 Not every bad UX decision is equally bad. This list starts with the things that make people instantly lose trust—the “I’m deleting this app” moments—and ends with the smaller details that make an app feel polished.
 
-![A phone overwhelmed by permission prompts, loading states, and an offline symbol](/images/blog/app-ux-red-flags-hero.webp)
-
 ## 1. A full-screen ad with a fake or tiny close button
 
 Especially when the tiny cross is in the bottom corner, impossible to tap, or opens the App Store instead of closing the ad. That is not monetization; it is a trap.
@@ -20,8 +18,6 @@ I have not seen your app yet, but you want notifications, contacts, location, ca
 ## 3. A blank screen when I lose internet
 
 I am in the metro, the signal drops, and your app becomes a white screen. I do not know whether the app is broken, my account is gone, or the internet is off. Show an offline state, cached content if possible, and a retry action.
-
-![A commuter looking at an app that has turned into a blank offline screen on the metro](/images/blog/app-offline-state-metro.webp)
 
 ## 4. A full-screen spinner that never explains itself
 
@@ -156,8 +152,6 @@ On every screen, I should quickly understand what is happening, what I can do ne
 ## Make this actionable: give this to your AI coding agent
 
 Before your agent builds a feature—or when you want it to review an existing screen—send it this document with the prompt below. It turns a vague request for “better UX” into a concrete quality check.
-
-![An AI coding assistant reviewing a mobile app screen against a UX checklist](/images/blog/ai-agent-ux-review.webp)
 
 > Review the feature/screen I am building against the attached **35 Things That Make Me Delete an App** checklist. Identify every applicable risk, especially deceptive ads, premature permission requests, offline and slow-network states, loading states, error handling, lost progress, paywalls, navigation, and accessibility. Then implement the fixes. Do not add confirmation dialogs by default; prefer safe optimistic UI and Undo where appropriate. For every network action, define the loading, success, failure, offline, and retry states. Preserve user input and context whenever possible.
 
