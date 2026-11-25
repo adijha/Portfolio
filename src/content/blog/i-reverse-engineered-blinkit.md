@@ -9,6 +9,8 @@ I wanted a Diet Coke. I ended up decompiling the app I was ordering it from.
 
 Without you typing anything, Blinkit's Android app sends enough for a server to guess who else is at home, roughly how old you are, and whether you're in a hurry.
 
+*Prefer to watch? [Here is the reel on Instagram](https://www.instagram.com/p/DgLQfZUT1xp/). This post goes deeper and shows the code.*
+
 ---
 
 ## How I did this
